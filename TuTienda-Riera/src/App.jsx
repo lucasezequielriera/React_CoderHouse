@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar.jsx';
-import Contador from './components/Contador';
-import Listado from './components/Listado';
-import Temperatura from './components/Temperatura';
+import ItemListContainer from './components/ItemListContainer';
 
 class App extends Component {
   render() {
@@ -13,9 +11,7 @@ class App extends Component {
           <Navbar />
         </header>
         <section className="Productos">
-          <Contador />
-          <Listado />
-          <Temperatura />
+          <ItemListContainer />
         </section>
       </div>
     );

@@ -88,9 +88,20 @@
 
 .Productos h2 {
   font-weight: 300;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .Productos button {
   padding: 10px 20px;
   margin: 0px 10px 10px 10px;
+}
+
+.Productos ul {
+  padding: 0px;
+} 
+
+.Productos .listaProductos {
+  list-style: none;
+  margin-top: 5px;
 }
