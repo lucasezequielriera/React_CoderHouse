@@ -9,9 +9,7 @@ class App extends Component {
         <header className="App-header">
           <Navbar />
         </header>
-        <section className="Productos">
-          
-        </section>
+        <section className="Productos"></section>
       </div>
     );
   }
