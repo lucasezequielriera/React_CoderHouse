@@ -1,8 +1,7 @@
 import React, {Fragment, useState} from 'react';
 
 const Listado = () => {
-    const [numeros, SetNumeros] = useState(["Lucas","Emanuel","Richard","Joaquin","Miguel","Cristian"]);
-    const valor = 0;
+    const [numeros] = useState(["Lucas","Emanuel","Richard","Joaquin","Miguel","Cristian"]);
 
     return (
         <Fragment>
