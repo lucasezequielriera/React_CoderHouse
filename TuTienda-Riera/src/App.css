@@ -33,6 +33,14 @@
   flex-flow: row nowrap;
 }
 
+.NavbarBox p {
+  font-size: 20px;
+  width: 100px;
+  white-space: nowrap;
+  align-self: center;
+  margin: 0px;
+}
+
 .Navbar {
   width: 100%;
   display: flex;
@@ -70,4 +78,19 @@
   to {
     transform: rotate(900deg);
   }
+}
+
+.Productos {
+  background-color: rgb(17, 17, 17);
+  color: white;
+  padding: 5px 0px 30px 0px;
+}
+
+.Productos h2 {
+  font-weight: 300;
+}
+
+.Productos button {
+  padding: 10px 20px;
+  margin: 0px 10px 10px 10px;
 }
