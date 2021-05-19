@@ -4,12 +4,12 @@ const ItemListContainer = () => {
     const [numeros] = useState(["Curso Javascript","Curso ReactJS","Curso PHP","Curso C++","Curso C#","Curso R"]);
 
     return (
-        <Fragment>
+        <Fragment className="row">
             <h2>Lista de Productos  </h2>
-            <ul>
+            <ul className="list-group col">
                 {
                     numeros.map((item, index) =>
-                        <li key={index} className="listaProductos">
+                        <li key={index} className="listaProductos list-group-item">
                             {item}
                         </li>
                     )
