@@ -9,7 +9,7 @@ const ItemCount = ({ stock, initial }) => {
             setStockRequired(stockRequired + 1);
             setError("");
         } else {
-            setError("");
+            setError("No hay más stock");
         }
     };
 
@@ -18,16 +18,18 @@ const ItemCount = ({ stock, initial }) => {
             setStockRequired(stockRequired - 1);
             setError("");
         } else {
-            setError("");
+            setError("No puedes ingresar menos que '1'");
         }
     };
 
     return (
-        <div className="display">
-            <button onClick={Reducir}>-</button>
-            <div className="numero">{stockRequired}</div>
-            <p>{error}</p>
-            <button onClick={Aumentar}>+</button>
+        <div className="error">
+            <div className="display">
+                <button onClick={Reducir}>-</button>
+                <div className="numero">{stockRequired}</div>
+                <button onClick={Aumentar}>+</button>
+            </div>
+        <p>{error}</p>
         </div>
     )
 }
