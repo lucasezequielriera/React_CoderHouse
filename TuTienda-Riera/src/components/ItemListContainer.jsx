@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react';
 import ItemCount from './ItemCount';
 
-const ItemListContainer = () => {
+function ItemListContainer() {
     const [numeros] = useState(["Curso Javascript","Curso ReactJS","Curso PHP","Curso C++","Curso C#","Curso R"]);
 
     return (

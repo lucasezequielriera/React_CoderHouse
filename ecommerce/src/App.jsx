@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Welcome from './components/Welcome';
+import Detalle from './components/ItemDetailContainer';
 
 class App extends Component {
   render() {
@@ -27,6 +28,10 @@ class App extends Component {
             <section className="Productos">
               <ItemListContainer />
             </section>
+          </Route>
+
+          <Route path="/Producto">
+            <Detalle />
           </Route>
 
         </Switch>
