@@ -200,13 +200,19 @@
   font-weight: 500;
 }
 
+.detalle-producto p:nth-child(4) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .detalle-producto p {
   border: none;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.61);
   border-radius: 4px;
   margin: 10px;
-  background-color: white;
   font-weight: 400;
+  color: white;
+  padding: 5px;
 }
 
 .detalle-producto button {

@@ -27,17 +27,22 @@ function ItemDetailContainer() {
             <h1 className="fw-lighter">Detalle del producto</h1>
         {
             producto?.map((item) => {
-            return (
-                <div className="detalle-producto">
-                    <p>Esta es la descripción del producto elegido:</p><br/>
-                    <p>Producto:{item.title}</p>
-                    <p>Aqui va la imagen</p>
-                    <p>Profesor:</p>
-                    <p>Descripción:</p>
-                    <p>Precio:</p>
-                    <button className="btn btn-success">Comprar</button>
-                </div>
-            )})
+                if (item.title == 'Javascript') {
+                    return (
+                        <div className="detalle-producto" key={item.id}>
+                            <p>Esta es la descripción del producto elegido:</p><br/>
+                            <p>Curso de {item.title}</p>
+                            <p><img src={item.imagen} alt="imagen"/></p>
+                            <p>Profesor: {item.profesor}</p>
+                            <p>Es un curso de programación orientado a los estudiantes de secuandario y estudiantes universaitarios para que puedan integrarse al mundo de la programación</p>
+                            <p>Precio: ${item.precio}</p>
+                            <button className="btn btn-success">Comprar</button>
+                        </div>
+                    )
+                } else {
+                    return false;
+                }
+            })
         }
         </div>
     )
