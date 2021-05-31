@@ -27,7 +27,7 @@ function ItemDetailContainer() {
             <h1 className="fw-lighter">Detalle del producto</h1>
         {
             producto?.map((item) => {
-                if (item.title == 'Javascript') {
+                if (item.title === 'Javascript') {
                     return (
                         <div className="detalle-producto" key={item.id}>
                             <p>Esta es la descripción del producto elegido:</p><br/>
