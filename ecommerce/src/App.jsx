@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Welcome from './components/Welcome';
-import Detalle from './components/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 class App extends Component {
   render() {
@@ -30,9 +30,12 @@ class App extends Component {
             </section>
           </Route>
 
-          <Route path="/Producto">
-            <Detalle />
-          </Route>
+          <Route path="/Javascript"> <ItemDetailContainer /></Route>
+          <Route path="/ReactJS"> <ItemDetailContainer /></Route>
+          <Route path="/PHP"> <ItemDetailContainer /></Route>
+          <Route path="/C++"> <ItemDetailContainer /></Route>
+          <Route path="/C#"> <ItemDetailContainer /></Route>
+          <Route path="/Programacion_en_R"> <ItemDetailContainer /></Route>
 
         </Switch>
 

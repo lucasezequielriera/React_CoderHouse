@@ -161,3 +161,56 @@
   border: 1px solid rgb(192, 192, 192);
   padding: 10px;
 }
+
+
+.productos {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+}
+
+.productos .card {
+  margin: 0px 2px;
+}
+
+.productos .card-body {
+  color: black;
+}
+
+
+.detalle-producto {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  border: 1px solid white;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  color: black;
+}
+
+.detalle-producto p:first-child {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+  box-shadow: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.detalle-producto p {
+  border: none;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.61);
+  border-radius: 4px;
+  margin: 10px;
+  background-color: white;
+  font-weight: 400;
+}
+
+.detalle-producto button {
+  width: 50%;
+  margin-top: 30px;
+  align-self: center;
+}
