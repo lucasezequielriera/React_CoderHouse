@@ -46,7 +46,7 @@ function ItemList() {
         title: 'C#',
         profesor: 'Miguel Aquino',
         precio: '9000',
-        imagen: 'https://www.fixedbuffer.com/wp-content/uploads/2019/06/reflexion.png',
+        imagen: 'https://aspnetcoremaster.com/img/csharp.webp',
         boton: '/C#'
     },
     {
@@ -62,7 +62,6 @@ function ItemList() {
 
     // Declarando variables // 
     const [productos, setProductos] = useState([]);
-
     // Usando Promises y Sync //
     const obtenerProductos = async () => {
         setTimeout (() => {

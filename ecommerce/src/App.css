@@ -80,6 +80,10 @@
   color: yellow;
 }
 
+.App-header .Navbar .Cart img {
+  width: 25px;
+}
+
 .App-link {
   color: #61dafb;
 }
