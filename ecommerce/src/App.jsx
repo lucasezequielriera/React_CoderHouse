@@ -31,12 +31,12 @@ class App extends Component {
             </section>
           </Route>
 
-          <Route path="/Javascript"> <ItemDetailContainer /></Route>
-          <Route path="/ReactJS"> <ItemDetailContainer /></Route>
-          <Route path="/PHP"> <ItemDetailContainer /></Route>
-          <Route path="/C++"> <ItemDetailContainer /></Route>
-          <Route path="/C#"> <ItemDetailContainer /></Route>
-          <Route path="/Programacion_en_R"> <ItemDetailContainer /></Route>
+          <Route path="/Javascript"> <ItemDetailContainer title="Javascript"/></Route>
+          <Route path="/ReactJS"> <ItemDetailContainer title="ReactJS"/></Route>
+          <Route path="/PHP"> <ItemDetailContainer title="PHP"/></Route>
+          <Route path="/C++"> <ItemDetailContainer title="C++"/></Route>
+          <Route path="/C#"> <ItemDetailContainer title="C#"/></Route>
+          <Route path="/Programacion_en_R"> <ItemDetailContainer title="Programacion_en_R"/></Route>
           <Route path="/Cart"> <Cart /></Route>
 
         </Switch>

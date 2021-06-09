@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-function ItemDetailContainer() {
+function ItemDetailContainer(props) {
 
     const datosGuardados = JSON.parse(localStorage.getItem('datos'));
     const datos = datosGuardados;
+    const nombreCurso = props.title;
 
     // Declarando variables // 
     const [producto, setProducto] = useState([]);
@@ -26,12 +27,24 @@ function ItemDetailContainer() {
         <div className="text-center mt-3">
             <h1 className="fw-lighter">Detalle del producto</h1>
         {
-            producto?.map((item) => {
-                if (item.title === 'Javascript') {
+            producto.map((item) => {
+                if (nombreCurso === 'Javascript') {
                     return (
                         <div className="detalle-producto" key={item.id}>
                             <p>Esta es la descripción del producto elegido:</p><br/>
-                            <p>Curso de {item.title}</p>
+                            <p>Curso de {props.title}</p>
+                            <p><img src={item.imagen} alt="imagen"/></p>
+                            <p>Profesor: {item.profesor}</p>
+                            <p>Es un curso de programación orientado a los estudiantes de secuandario y estudiantes universaitarios para que puedan integrarse al mundo de la programación</p>
+                            <p>Precio: ${item.precio}</p>
+                            <button className="btn btn-success">Comprar</button>
+                        </div>
+                    )
+                } if (nombreCurso === 'ReactJS') {
+                    return (
+                        <div className="detalle-producto" key={item.id}>
+                            <p>Esta es la descripción del producto elegido:</p><br/>
+                            <p>Curso de {props.title}</p>
                             <p><img src={item.imagen} alt="imagen"/></p>
                             <p>Profesor: {item.profesor}</p>
                             <p>Es un curso de programación orientado a los estudiantes de secuandario y estudiantes universaitarios para que puedan integrarse al mundo de la programación</p>
