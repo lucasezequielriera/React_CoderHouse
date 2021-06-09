@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import imagen from './../producto.png';
 
-function Item() {
+function ItemDetail() {
 
     const style = {
         width: '18rem',
@@ -27,4 +27,4 @@ function Item() {
     )
 }
 
-export default Item;
+export default ItemDetail;

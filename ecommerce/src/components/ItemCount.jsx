@@ -18,7 +18,7 @@ function ItemCount({stock, initial}) {
             setStockRequired(stockRequired - 1);
             setError("");
         } else {
-            setError("No puedes ingresar menos que '1'");
+            setError("No puedes ingresar menos que '0'");
         }
     };
 

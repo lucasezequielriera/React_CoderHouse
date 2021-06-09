@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Welcome from './components/Welcome';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart'
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
           <Route path="/C++"> <ItemDetailContainer /></Route>
           <Route path="/C#"> <ItemDetailContainer /></Route>
           <Route path="/Programacion_en_R"> <ItemDetailContainer /></Route>
+          <Route path="/Cart"> <Cart /></Route>
 
         </Switch>
 

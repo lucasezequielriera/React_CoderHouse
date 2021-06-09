@@ -87,7 +87,7 @@ function ItemList() {
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">Profesor: {item.profesor}<br/>Precio: ${item.precio}</p>
-                                <ItemCount stock="5" initial="1"/>
+                                <ItemCount stock="5" initial="0"/>
                                 <Link to={item.boton} key={item.id} className="btn btn-primary">Ver más</Link>
                             </div>
                         </div>
