@@ -80,15 +80,14 @@ function ItemList() {
     return (
         <div className="productos">
             {
-                productos?.map((item) => {
-                    return(
-                        <div className="card" style={style} key={item.id}>
+                productos?.map((item, index) => {
+                    return (
+                        <div className="card" style={style} key={index}>
                             <img src={item.imagen} className="card-img-top" alt="imagen" />
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">Profesor: {item.profesor}<br/>Precio: ${item.precio}</p>
-                                <ItemCount stock="5" initial="0"/>
-                                <Link to={item.boton} key={item.id} className="btn btn-primary">Ver más</Link>
+                                <ItemCount stock="5" initial="0" url={item.boton} dato={index} />
                             </div>
                         </div>
                     )
