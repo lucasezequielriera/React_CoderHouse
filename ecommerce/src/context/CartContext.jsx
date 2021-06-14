@@ -1,5 +1,4 @@
 import React from 'react';
-export const ThemeContext = React.createContext();
 
 const contextDatos = (props) => {
 
@@ -52,11 +51,15 @@ const contextDatos = (props) => {
         imagen: 'https://puntodis.com/wp-content/uploads/2015/12/r1.jpg',
         boton: '/Programacion_en_R'
     }];
+
+    const carrito = [];
+
     return(
-        <ThemeContext.Provider value={{datos}}>
+        <CartContext.Provider value={{datos, carrito}}>
             {props.children}
-        </ThemeContext.Provider>
+        </CartContext.Provider>
     )
 }
 
 export default contextDatos;
+export const CartContext = React.createContext();
