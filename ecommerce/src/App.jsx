@@ -33,7 +33,7 @@ class App extends Component {
                 <ItemListContainer />
               </section>
             </Route>
-
+            {/* Acá tengo que editar las props!!! */}
             <Route path="/Javascript"> <ItemDetailContainer title="Javascript"/></Route>
             <Route path="/ReactJS"> <ItemDetailContainer title="ReactJS"/></Route>
             <Route path="/PHP"> <ItemDetailContainer title="PHP"/></Route>

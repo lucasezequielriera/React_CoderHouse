@@ -26,7 +26,7 @@ export default function ItemCount({stock, initial}) {
     function comprobar() {
             if (stockRequired >= 1) {
             return (
-                <Link to="." className="btn btn-success px-5 mt-4 mb-0">Comprar Curso</Link>
+                <Link to="." className="btn btn-success px-5 mt-4 mb-0">Terminar compra</Link>
             )
         }
     }
