@@ -1,20 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
-import cart from '../cart.png'
+import NavbarItem from './NavbarItem';
 
 function Navbar() {
     return (
         <div className="NavbarBox">
-            <CartWidget />
+            <CartWidget url="/"/>
             <p>Welcome to Developer Store</p>
             <ul className="Navbar">
-                <Link to="/Productos" className="link">Productos</Link>
-                <Link to="/Nosotros" className="link" >Nosotros</Link>
-                <Link to="/Login" className="link" >Login</Link>
-                <Link to="/Cart" className="Cart">
-                    <img src={cart} alt="imagen"></img>
-                </Link>
+                <NavbarItem name="Productos" url="/Productos"/>
+                <NavbarItem name="Nosotros" url="/Nosotros"/>
+                <NavbarItem name="Login" url="/Login"/>
+                <NavbarItem name="Login" url="/Cart"/>
             </ul>
         </div>
     );

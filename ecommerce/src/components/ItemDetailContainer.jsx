@@ -1,64 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import ItemDetail from './ItemDetail';
 
-function ItemDetailContainer(props) {
-
-    const datosGuardados = JSON.parse(localStorage.getItem('datos'));
-    const datos = datosGuardados;
-    const nombreCurso = props.title;
-
-    // Declarando variables // 
-    const [producto, setProducto] = useState([]);
-
-    // Usando Promises y Sync //
-    const obtenerDatos = async () => {
-        setTimeout (() => {
-            const datosProducto = datos;
-            setProducto(datosProducto);
-        }, 1000);
-    }
-
-    // Usando useEffect para devolver el array de los datos capturados //
-    useEffect (function() {
-        console.log("funciono");
-        obtenerDatos();
-    }, []);
-
+export default function ItemDetailContainer() {
     return (
-        <div className="text-center mt-3">
-            <h1 className="fw-lighter">Detalle del producto</h1>
-        {
-            producto.map((item) => {
-                if (nombreCurso === 'Javascript') {
-                    return (
-                        <div className="detalle-producto" key={item.id}>
-                            <p>Esta es la descripción del producto elegido:</p><br/>
-                            <p>Curso de {props.title}</p>
-                            <p><img src={item.imagen} alt="imagen"/></p>
-                            <p>Profesor: {item.profesor}</p>
-                            <p>Es un curso de programación orientado a los estudiantes de secuandario y estudiantes universaitarios para que puedan integrarse al mundo de la programación</p>
-                            <p>Precio: ${item.precio}</p>
-                            <button className="btn btn-success">Comprar</button>
-                        </div>
-                    )
-                } if (nombreCurso === 'ReactJS') {
-                    return (
-                        <div className="detalle-producto" key={item.id}>
-                            <p>Esta es la descripción del producto elegido:</p><br/>
-                            <p>Curso de {props.title}</p>
-                            <p><img src={item.imagen} alt="imagen"/></p>
-                            <p>Profesor: {item.profesor}</p>
-                            <p>Es un curso de programación orientado a los estudiantes de secuandario y estudiantes universaitarios para que puedan integrarse al mundo de la programación</p>
-                            <p>Precio: ${item.precio}</p>
-                            <button className="btn btn-success">Comprar</button>
-                        </div>
-                    )
-                } else {
-                    return false;
-                }
-            })
-        }
-        </div>
+        <>
+            <h2 className="text-center">Detalle del producto</h2>
+            <ItemDetail/>
+        </>
     )
 }
-
-export default ItemDetailContainer;

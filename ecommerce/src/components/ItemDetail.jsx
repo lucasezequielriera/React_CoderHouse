@@ -1,30 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import imagen from './../producto.png';
+import { useEffect, useState, useContext } from 'react';
+import ItemCount from './ItemCount';
+import { CartContext } from '../context/CartContext';
+import imagen from '../assets/images/producto.png'
 
-function ItemDetail() {
+export default function ItemDetail() {
 
     const style = {
-        width: '18rem',
-        color: 'black',
-        margin: '0px 5px'
+        width: '700px',
+        alignSelf: 'center',
+        marginTop: '5px'
     }
 
+    const { datos } = useContext(CartContext);
+    // const { carrito } = useContext(CartContext);
 
-    // const Producto1 = { [
-    //     nombre: 'Cajas max',
-    //     precio: 100
-    // ]}
+    // Declarando variables // 
+    const [productos, setProductos] = useState([]);
+    const producto = productos[0];
+
+    // Usando Promises y Sync //
+    const obtenerProductos = async () => {
+        setTimeout (() => {
+            const datosProductos = datos;
+            setProductos(datosProductos);
+        }, 1000);
+    };
+
+    // Usando useEffect para devolver el array de los datos capturados //
+    useEffect (function() {
+        obtenerProductos();
+    }, []);
 
     return (
-        <div className="card" style={style}>
-            <img src={imagen} className="card-img-top" alt="imagen_producto" />
+        <div className="card text-center">
+            <img src={imagen} style={style} className="card-img-top text-center" alt="imagen_producto" />
             <div className="card-body">
-                <p className="card-text">Curso de programación dictado de forma online.</p>
-                <Link to='/Producto'  className="btn btn-dark">Me interesa</Link>
+                <p className="card-text">{producto?.descripcion}</p>
+                <p>El profesor es {producto?.profesor} y el precio del curso es de ${producto?.precio}</p>
+                <p>El curso se da de forma online de lunes a viernes de 8hs a 17hs</p>
+                <p>Para comprar deberá elegir la cantidad de cursos requeridos y se enviarán al carrito de compras para que pueda seguir eligiendo los cursos que tenemos</p>
+                <ItemCount stock="5" initial="0" url="" dato="0"/>
             </div>
         </div>
     )
 }
-
-export default ItemDetail;

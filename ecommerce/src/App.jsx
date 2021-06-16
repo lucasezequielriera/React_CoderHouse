@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './assets/css/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
@@ -47,7 +47,7 @@ class App extends Component {
         </Switch>
 
       </Router>
-    );
+    )
   }
 }
 

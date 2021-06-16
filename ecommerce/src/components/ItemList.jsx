@@ -1,16 +1,11 @@
-import React, {useState, useEffect, useContext} from 'react';
-import ItemCount from './ItemCount';
+import {useState, useEffect, useContext} from 'react';
 import { CartContext } from '../context/CartContext'
+import Item from './Item';
 
-function ItemList() {
-
-    // Style Card de Bootstrap //
-    const style = {
-        width: '18rem'
-    }
+export default function ItemList() {
 
     const { datos } = useContext(CartContext);
-    const { carrito } = useContext(CartContext);
+    // const { carrito } = useContext(CartContext);
 
     // Declarando variables // 
     const [productos, setProductos] = useState([]);
@@ -32,21 +27,20 @@ function ItemList() {
     return (
         <div className="productos">
             {
-                productos?.map((item, index) => {
+                productos?.map((item) => {
                     return (
-                        <div className="card" style={style} key={index}>
-                            <img src={item.imagen} className="card-img-top" alt="imagen" />
-                            <div className="card-body">
-                                <h5 className="card-title">{item.title}</h5>
-                                <p className="card-text">Profesor: {item.profesor}<br/>Precio: ${item.precio}</p>
-                                <ItemCount stock="5" initial="0" url={item.boton} dato={index} />
-                            </div>
-                        </div>
+                        <Item
+                        key={item.id}
+                        imagen={item.imagen}
+                        title={item.title}
+                        precio={item.precio}
+                        profesor={item.profesor}
+                        descripcion={item.descripcion}
+                        url={item.url}
+                        />
                     )
                 })
             }
         </div>
     )
 }
-
-export default ItemList;

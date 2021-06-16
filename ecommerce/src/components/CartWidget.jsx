@@ -1,12 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from './logo.svg';
+import logo from '../assets/images/logo.svg';
 
-function CartWidget() {
+function CartWidget({url}) {
     return (
-        <Fragment>
-            <Link to="/"><img src={logo} className="App-logo" alt="logo"/></Link>
-        </Fragment>
+        <>
+            <Link to={url}><img src={logo} className="App-logo" alt="logo"/></Link>
+        </>
     );
 }
 

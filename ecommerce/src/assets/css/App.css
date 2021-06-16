@@ -4,7 +4,7 @@
 }
 
 .App-logo {
-  width: 60px;
+  width: 70px;
   pointer-events: none;
 }
 
@@ -25,6 +25,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  font-weight: 200;
 }
 
 .NavbarBox {
@@ -54,10 +55,11 @@
 
 .App-header .Navbar a {
   color: rgb(0, 204, 255);
-  margin: 5px;
+  margin: 9px;
   margin-right: 20px;
-  transition: all .1s;
+  transition: all .3s;
   text-decoration: none;
+  font-weight: 200;
 }
 
 .App-header .Navbar a:hover {
@@ -73,7 +75,7 @@
 .App-header .Navbar li a {
   color: white;
   text-decoration: none;
-  color: red !important;
+  color: #61dafb !important;
 }
 
 .App-header .Navbar li a:active {
@@ -81,7 +83,7 @@
 }
 
 .App-header .Navbar .Cart img {
-  width: 25px;
+  width: 28px;
 }
 
 .App-link {
@@ -105,7 +107,8 @@
 }
 
 .Bienvenida h1 {
-  color: white;
+  color: black;
+  font-weight: 200;
 }
 
 .Productos {
@@ -138,7 +141,7 @@
   font-weight: 600;
 }
 
-.Productos .display {
+.display {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -146,7 +149,7 @@
   line-height: 7px;
 }
 
-.Productos .display button {
+.display button {
   background-color: white;
   margin: 0px;
   border: 1px solid rgb(192, 192, 192);
@@ -159,7 +162,7 @@
   color: red;
 }
 
-.Productos .display .numero {
+.display .numero {
   width: 100px;
   height: 30px;
   border: 1px solid rgb(192, 192, 192);
