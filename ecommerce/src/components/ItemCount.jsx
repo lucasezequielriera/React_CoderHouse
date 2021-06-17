@@ -4,6 +4,9 @@ export default function ItemCount({stock, initial}) {
 
     const [stockRequired, setStockRequired] = useState(Number(initial));
     const [error, setError] = useState("");
+    const [button, setButton] = useState(
+    <button className="btn btn-success px-5 mt-4 mb-0" onClick={terminarCompra}>Agregar al carrito</button>
+    )
     
     const Aumentar = () => {
         if (Number(stock) >= stockRequired + 1) {
@@ -23,13 +26,21 @@ export default function ItemCount({stock, initial}) {
         }
     };
 
-    function comprobar() {
-            if (stockRequired >= 1) {
-            return (
-                <Link to="." className="btn btn-success px-5 mt-4 mb-0">Terminar compra</Link>
+    function terminarCompra() {
+        setButton(<button className="btn btn-warning px-5 mt-4 mb-0" onClick={compraTerminada}>Terminar compra</button>)
+    };
+
+    function compraTerminada() {
+        alert("Perfecto! Has comprado el producto!")
+    }
+
+    function agregarAlCarrito() {
+        if (stockRequired >= 1) {
+        return (
+            button
             )
         }
-    }
+    };
 
     return (
         <div className="error">
@@ -40,7 +51,7 @@ export default function ItemCount({stock, initial}) {
                     </div>
                 <button onClick={Aumentar}>+</button>
             </div>
-            {comprobar()}
+            {agregarAlCarrito()}
         <p>{error}</p>
         </div>
     )
