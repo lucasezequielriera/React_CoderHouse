@@ -4,10 +4,11 @@ export default function ItemCount({stock, initial}) {
 
     const [stockRequired, setStockRequired] = useState(Number(initial));
     const [error, setError] = useState("");
-    const [button, setButton] = useState(
-    <button className="btn btn-success px-5 mt-4 mb-0" onClick={terminarCompra}>Agregar al carrito</button>
-    )
-    
+    const [stockComprado, setStockComprado] = useState(Number(initial));
+    const [boton, setBoton] = useState(
+        <button className="btn btn-success px-5 mt-4 mb-0" onClick={cambiarBoton}>Agregar al carrito</button>
+        );
+    // Operaciones con botones //
     const Aumentar = () => {
         if (Number(stock) >= stockRequired + 1) {
             setStockRequired(stockRequired + 1);
@@ -16,7 +17,6 @@ export default function ItemCount({stock, initial}) {
             setError("No hay más stock");
         }
     };
-
     const Reducir = () => {
         if (Number(initial) <= stockRequired - 1) {
             setStockRequired(stockRequired - 1);
@@ -26,21 +26,11 @@ export default function ItemCount({stock, initial}) {
         }
     };
 
-    function terminarCompra() {
-        setButton(<button className="btn btn-warning px-5 mt-4 mb-0" onClick={compraTerminada}>Terminar compra</button>)
-    };
-
-    function compraTerminada() {
-        alert("Perfecto! Has comprado el producto!")
+    function cambiarBoton() {
+        setBoton(<Link to="/Cart" className="btn btn-success px-5 mt-4 mb-0">Terminar la compra</Link>)
+        setStockComprado(1)
+        console.log(stockComprado)
     }
-
-    function agregarAlCarrito() {
-        if (stockRequired >= 1) {
-        return (
-            button
-            )
-        }
-    };
 
     return (
         <div className="error">
@@ -51,7 +41,7 @@ export default function ItemCount({stock, initial}) {
                     </div>
                 <button onClick={Aumentar}>+</button>
             </div>
-            {agregarAlCarrito()}
+            {stockRequired >= 1 ? boton : ""}
         <p>{error}</p>
         </div>
     )
