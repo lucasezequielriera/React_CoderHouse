@@ -11,7 +11,7 @@ export default function ItemList() {
     const [productos, setProductos] = useState([]);
 
     // Usando Promises y Sync //
-    const obtenerProductos = async () => {
+    const obtenerProductos = async() => {
         setTimeout (() => {
             const datosProductos = datos;
             setProductos(datosProductos);
@@ -20,7 +20,6 @@ export default function ItemList() {
 
     // Usando useEffect para devolver el array de los datos capturados //
     useEffect (function() {
-        console.log("funciono");
         obtenerProductos();
     }, []);
 
@@ -36,7 +35,7 @@ export default function ItemList() {
                         precio={item.precio}
                         profesor={item.profesor}
                         descripcion={item.descripcion}
-                        url={item.url}
+                        url={item.id}
                         />
                     )
                 })

@@ -2,7 +2,7 @@ import React from 'react';
 import CartWidget from './CartWidget';
 import NavbarItem from './NavbarItem';
 
-function Navbar() {
+export default function Navbar() {
     return (
         <div className="NavbarBox">
             <CartWidget url="/"/>
@@ -11,10 +11,8 @@ function Navbar() {
                 <NavbarItem name="Productos" url="/Productos"/>
                 <NavbarItem name="Nosotros" url="/Nosotros"/>
                 <NavbarItem name="Login" url="/Login"/>
-                <NavbarItem name="Login" url="/Cart"/>
+                <NavbarItem name="Cart" url="/Cart"/>
             </ul>
         </div>
     );
 }
-
-export default Navbar; 
