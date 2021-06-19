@@ -9,18 +9,14 @@ import Cart from './components/Cart';
 import CartContext from './context/CartContext';
 
 class App extends Component {
+
   render() {
+
     return (
+
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <Navbar />
-          </header>
-        </div>
-
+        <Navbar />
         <Switch>
-
-          <CartContext>
 
             <Route exact path="/">
               <section className="Bienvenida">
@@ -34,16 +30,19 @@ class App extends Component {
               </section>
             </Route>
 
-            <Route exact path="/Productos/:id"> <ItemDetail/></Route>
-            <Route exact path="/Cart"> <Cart /></Route>
-
-          </CartContext>
+          <Route exact path="/Productos/:id"> <ItemDetail/></Route>
+          <Route exact path="/Cart"> <Cart /></Route>
 
         </Switch>
-
       </Router>
     )
   }
 }
+
+export const CartProvider = ({children}) => {
+  const [cart, setCart] = useState(INITIAL_STATE)
+}
+
+return <CartContext.Provider value={{productos}}>{children}</CartContext.Provider>
 
 export default App;

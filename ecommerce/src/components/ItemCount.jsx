@@ -25,8 +25,13 @@ export default function ItemCount({stock, initial}) {
             setError("No puedes ingresar menos que '0'");
         }
     };
+    
+    function agregarProducto() {
+        alert("Agregaste el producto")
+    }
 
     function cambiarBoton() {
+        agregarProducto();
         setBoton(<Link to="/Cart" className="btn btn-success px-5 mt-4 mb-0">Terminar la compra</Link>)
         setStockComprado(1)
         console.log(stockComprado)
