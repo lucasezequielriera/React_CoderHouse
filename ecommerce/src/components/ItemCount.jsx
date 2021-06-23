@@ -35,7 +35,8 @@ export default function ItemCount({stock, initial, producto}) {
         const nuevoProducto = {
             nombre: producto.title,
             id: {uniqid},
-            precio: producto.precio
+            precio: producto.precio,
+            cantidad: 1
         }
         setInfo([...info, nuevoProducto])
     }

@@ -18,10 +18,13 @@ export default function Cart() {
             <h1 className="fw-lighter">Estos son tus productos que agregaste</h1>
             <ul className="d-flex flex-column">
                 {
-                    info.map((item, index) => {
+                    info.map((item) => {
                         return(
-                            <li key={item.id} className="border d-flex flex-row justify-content-between text-center w-50 m-auto px-3 py-1 align-items-center">Producto: {item.nombre}, con un precio de: {item.precio}
-                            <button className="btn btn-danger" onClick={ () => deleteProducto(item.id)}>X</button></li>
+                            <li key={item.id} className="border d-flex flex-row justify-content-between text-center w-50 m-auto px-3 py-1 align-items-center">
+                                <div>{item.cantidad}</div>
+                                {item.nombre} / ${item.precio}
+                                <button className="btn btn-danger" onClick={ () => deleteProducto(item.id)}>X</button>
+                            </li>
                         )
                     })
                 }
