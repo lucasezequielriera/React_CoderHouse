@@ -1,9 +1,10 @@
 import { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
-import { CartContext } from '../context/CartContext';
+import CartContext from '../context/CartContext';
 import imagen from '../assets/images/producto.png'
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
+import ContextProvider from '../context/ContextProvider';
 
 export default function ItemDetail() {
 
@@ -15,7 +16,12 @@ export default function ItemDetail() {
 
     const {id} = useParams();
 
-    const {datos} = useContext(CartContext);
+    const datos = useContext(CartContext);
+    console.log(datos);
+
+    const datosNuevos = useContext(ContextProvider);
+    console.log(datosNuevos)
+    // const {datos} = useContext(CartContext);
     // const { carrito } = useContext(CartContext);
 
     // Declarando variables // 

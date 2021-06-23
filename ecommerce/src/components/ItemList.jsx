@@ -1,11 +1,12 @@
 import {useState, useContext} from 'react';
-import { CartContext } from '../context/CartContext'
+import CartContext from '../context/CartContext'
 import Item from './Item';
 import Loading from './Loading';
 
 export default function ItemList() {
 
-    const { datos } = useContext(CartContext);
+    const datos = useContext(CartContext);
+    console.log(datos)
     // const { carrito } = useContext(CartContext);
 
     // Declarando variables // 

@@ -1,6 +1,10 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+import ContextProvider from '../context/ContextProvider';
+
 export default function ItemCount({stock, initial}) {
+
+    const {info, setInfo} = useContext(ContextProvider);
 
     const [stockRequired, setStockRequired] = useState(Number(initial));
     const [error, setError] = useState("");
@@ -13,6 +17,8 @@ export default function ItemCount({stock, initial}) {
         if (Number(stock) >= stockRequired + 1) {
             setStockRequired(stockRequired + 1);
             setError("");
+            setInfo(...[{id: 1, nombre: 'Cristina'}])
+            console.log(info)
         } else {
             setError("No hay más stock");
         }

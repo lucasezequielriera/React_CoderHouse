@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { CartContext } from '../context/CartContext'
+import React, { useContext } from 'react';
+import CartContext from '../context/CartContext';
 
 export default function Cart() {
 
-    const { datos } = useContext(CartContext);
+
+    const datos = useContext(CartContext);
     
     return(
         <div className="cart text-center my-5">
