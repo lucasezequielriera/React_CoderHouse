@@ -6,7 +6,6 @@ import Loading from './Loading';
 export default function ItemList() {
 
     const datos = useContext(CartContext);
-    console.log(datos)
     // const { carrito } = useContext(CartContext);
 
     // Declarando variables // 

@@ -1,14 +1,14 @@
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import ContextProvider from '../context/ContextProvider';
+import uniqid from 'uniqid';
 
-export default function ItemCount({stock, initial}) {
+export default function ItemCount({stock, initial, producto}) {
 
     const {info, setInfo} = useContext(ContextProvider);
 
     const [stockRequired, setStockRequired] = useState(Number(initial));
     const [error, setError] = useState("");
-    const [stockComprado, setStockComprado] = useState(Number(initial));
     const [boton, setBoton] = useState(
         <button className="btn btn-success px-5 mt-4 mb-0" onClick={cambiarBoton}>Agregar al carrito</button>
         );
@@ -17,8 +17,6 @@ export default function ItemCount({stock, initial}) {
         if (Number(stock) >= stockRequired + 1) {
             setStockRequired(stockRequired + 1);
             setError("");
-            setInfo(...[{id: 1, nombre: 'Cristina'}])
-            console.log(info)
         } else {
             setError("No hay más stock");
         }
@@ -33,14 +31,18 @@ export default function ItemCount({stock, initial}) {
     };
     
     function agregarProducto() {
-        alert("Agregaste el producto")
+        // Creando el producto elegido en el array del carrito //
+        const nuevoProducto = {
+            nombre: producto.title,
+            id: {uniqid},
+            precio: producto.precio
+        }
+        setInfo([...info, nuevoProducto])
     }
 
     function cambiarBoton() {
         agregarProducto();
         setBoton(<Link to="/Cart" className="btn btn-success px-5 mt-4 mb-0">Terminar la compra</Link>)
-        setStockComprado(1)
-        console.log(stockComprado)
     }
 
     return (

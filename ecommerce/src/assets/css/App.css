@@ -246,3 +246,7 @@
 .btn {
   font-size: 13px !important;
 }
+
+.cart ul {
+  list-style: none;
+}
