@@ -10,6 +10,8 @@ export default function Cart() {
         const nuevoArray = info.filter( item => item.id !== id)
         setInfo(nuevoArray);
     }
+
+    const boton = <button className="btn btn-success w-100">Comprar</button>
     
     return(
         <div className="cart text-center my-5">
@@ -24,7 +26,7 @@ export default function Cart() {
                     })
                 }
             </ul>
-            <button className="btn btn-success w-100">Comprar</button>
+            { info.length >= 1 ? boton : "" }
         </div>
     )
 }
