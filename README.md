@@ -8,4 +8,4 @@
 ### 6) useContext usado para buscar los productos que están guardados en su respectivo archivo
 ### 7) Preloader funcionando y con correcciones en sync await que era un desastre
 
-![Alt Text](https://drive.google.com/file/d/1e-9lBoe6exBAXrgCysoKYeTeNs-Gjl6c/view?usp=sharing)
+![Alt Text](.src/assets/images/cart.png)
