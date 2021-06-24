@@ -11,7 +11,12 @@ export default function Cart() {
         setInfo(nuevoArray);
     }
 
-    const boton = <button className="btn btn-success w-100">Comprar</button>
+    function compraFinalizada() {
+        alert("Muchas gracias por tu compra! Volvé pronto!");
+        setInfo([]);
+    }
+
+    const boton = <button className="btn btn-success w-100" onClick={compraFinalizada}>Comprar</button>
     
     return(
         <div className="cart text-center my-5">
