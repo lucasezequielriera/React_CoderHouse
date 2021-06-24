@@ -8,4 +8,4 @@
 ### 6) useContext usado para buscar los productos que están guardados en su respectivo archivo
 ### 7) Preloader funcionando y con correcciones en sync await que era un desastre
 
-![Alt Text](.src/assets/images/cart.png)
+![Alt Text](https://github.com/lucasezequielriera/React_CoderHouse/blob/master/gif_react.gif)
