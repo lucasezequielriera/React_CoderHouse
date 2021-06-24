@@ -12,7 +12,8 @@ export default function Cart() {
     }
 
     function compraFinalizada() {
-        alert("Muchas gracias por tu compra! Volvé pronto!");
+        const numeroDeCompra = Math.floor(Math.random()  * (9000000 - 1000000));
+        alert(`Muchas gracias por tu compra! Tu número de compra es: ${numeroDeCompra}`);
         setInfo([]);
     }
 
