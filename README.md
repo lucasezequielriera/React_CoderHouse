@@ -7,3 +7,5 @@
 ### 5) Botones vinculados con sus productos
 ### 6) useContext usado para buscar los productos que están guardados en su respectivo archivo
 ### 7) Preloader funcionando y con correcciones en sync await que era un desastre
+
+![Alt Text](https://drive.google.com/file/d/1Pbq2R4Sb_B1e6-xq0Nz2IWvTRCPktZCd/view?usp=sharing)
