@@ -1,9 +1,9 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import ItemCount from './ItemCount';
-import CartContext from '../context/CartContext';
 import imagen from '../assets/images/producto.png'
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
+import {getFirestore} from '../firebase'; 
 
 export default function ItemDetail() {
     // Usando styles //
@@ -15,33 +15,41 @@ export default function ItemDetail() {
     // Usando useParams por id //
     const {id} = useParams();
 
-    // Usando useContext pasando datos globales //
-    const datos = useContext(CartContext);
+    // Usando Firebase //
+    const [producto, setProducto] = useState([null]);
 
-    // Declarando variables // 
-    const [producto, setProducto] = useState([]);
+    useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = db.collection("productos");
+        itemsCollection.get().then((snapshot) => {
+        setProducto(snapshot.docs.map(doc => doc.data()));
+        });
+    }, []);
 
     // Declarando constante con los datos del producto elegido por id //
     const detalleProducto = producto[id];
 
-    // Usando async await para mostrar productos después de 2 segundos //
-    function ver() {
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(datos);
-            }, 1000)
-        });
-    }
-    // Usando Promises y Sync //
-    async function obtenerProductos() {
-        const result = await ver();
-        setProducto(result);
-    };
+    // // Usando useContext pasando datos globales //
+    // const datos = useContext(CartContext);
 
-    // Inicializando productos por function //
-    obtenerProductos();
+    // // Usando async await para mostrar productos después de 2 segundos //
+    // function ver() {
+    //     return new Promise(resolve => {
+    //         setTimeout(() => {
+    //             resolve(datos);
+    //         }, 1000)
+    //     });
+    // }
+    // // Usando Promises y Sync //
+    // async function obtenerProductos() {
+    //     const result = await ver();
+    //     setProducto(result);
+    // };
 
-    if (producto.length) {
+    // // Inicializando productos por function //
+    // obtenerProductos();
+
+    if (producto.length >= 2) {
         return (
             <div className="card text-center">
                 <img src={imagen} style={style} className="card-img-top text-center" alt="imagen_producto" />

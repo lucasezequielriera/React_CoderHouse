@@ -1,47 +1,55 @@
-import {useState, useContext} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import CartContext from '../context/CartContext'
 import Item from './Item';
 import Loading from './Loading';
-
+import {getFirestore} from '../firebase'; 
 export default function ItemList() {
 
-    const datos = useContext(CartContext);
-    // const { carrito } = useContext(CartContext);
+    // Usando Firebase //
+    const [productos, setProductos] = useState([null]);
 
-    // Declarando variables // 
-    const [productos, setProductos] = useState([]);
-
-    // Usando async await para mostrar productos después de 2 segundos //
-    function ver() {
-        return new Promise(resolve => {
-            setTimeout(() => {
-                resolve(datos);
-            }, 1000)
+    useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = db.collection("productos");
+        itemsCollection.get().then((snapshot) => {
+        setProductos(snapshot.docs.map(doc => doc.data()));
         });
-    }
+    }, []);
+    
+    // // Declarando variables // 
+    // const [productos, setProductos] = useState([]);
 
-    async function obtenerProductos() {
-        const result = await ver();
-        setProductos(result);
-    };
+    // // Usando async await para mostrar productos después de 2 segundos //
+    // function ver() {
+    //     return new Promise(resolve => {
+    //         setTimeout(() => {
+    //             resolve(datos);
+    //         }, 1000)
+    //     });
+    // }
 
-    // Mostrando función siempre //
-    obtenerProductos()
+    // async function obtenerProductos() {
+    //     const result = await ver();
+    //     setProductos(result);
+    // };
 
-    if (productos.length) {
+    // // Mostrando función siempre //
+    // obtenerProductos()
+
+    if (productos.length >= 2) {
         return (
             <div className="productos">
                 {
-                    productos?.map((item) => {
+                    productos?.map((item, index) => {
                         return (
                             <Item
-                            key={item.id}
+                            key={index}
                             imagen={item.imagen}
-                            title={item.title}
+                            title={item.titulo}
                             precio={item.precio}
                             profesor={item.profesor}
                             descripcion={item.descripcion}
-                            url={item.id}
+                            url={index}
                             />
                         )
                     })

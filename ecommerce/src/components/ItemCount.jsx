@@ -33,7 +33,7 @@ export default function ItemCount({stock, initial, producto}) {
     function agregarProducto() {
         // Creando el producto elegido en el array del carrito //
         const nuevoProducto = {
-            nombre: producto.title,
+            nombre: producto.titulo,
             id: {uniqid},
             precio: producto.precio,
             cantidad: 1
