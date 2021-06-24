@@ -1,5 +1,4 @@
-import {useState, useContext, useEffect} from 'react';
-import CartContext from '../context/CartContext'
+import {useState, useEffect} from 'react';
 import Item from './Item';
 import Loading from './Loading';
 import {getFirestore} from '../firebase'; 

@@ -5,13 +5,12 @@ import ItemListContainer from './components/ItemListContainer';
 import Welcome from './components/Welcome';
 import ItemDetail from './components/ItemDetail';
 import Cart from './components/Cart';
-import CartContext from './context/CartContext';
 import {ContextProvider} from './context/ContextProvider';
 
 export default function App() {
 
   return (
-    <CartContext.Provider value={CartContext._currentValue}>
+    // <CartContext.Provider value={CartContext._currentValue}>
       <ContextProvider>
       <Router>
         <Navbar />
@@ -35,6 +34,6 @@ export default function App() {
         </Switch>
       </Router>
       </ContextProvider>
-    </CartContext.Provider>
+    // </CartContext.Provider>
   )
 }
