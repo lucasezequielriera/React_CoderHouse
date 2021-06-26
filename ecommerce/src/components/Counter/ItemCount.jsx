@@ -1,6 +1,6 @@
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import ContextProvider from '../context/ContextProvider';
+import ContextProvider from '../../context/ContextProvider';
 import uniqid from 'uniqid';
 
 export default function ItemCount({stock, initial, producto}) {
@@ -49,11 +49,11 @@ export default function ItemCount({stock, initial, producto}) {
     return (
         <div className="error">
             <div className="display">
-                <button onClick={Reducir}>-</button>
+                <button onClick={Reducir} className="btn btn-danger">-</button>
                     <div className="numero">
                         {stockRequired}
                     </div>
-                <button onClick={Aumentar}>+</button>
+                <button onClick={Aumentar} className="btn btn-success">+</button>
             </div>
             {stockRequired >= 1 ? boton : ""}
         <p>{error}</p>

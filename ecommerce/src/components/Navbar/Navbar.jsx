@@ -1,5 +1,5 @@
 import React from 'react';
-import CartWidget from './CartWidget';
+import CartWidget from '../../pages/Cart/CartWidget';
 import NavbarItem from './NavbarItem';
 
 export default function Navbar() {

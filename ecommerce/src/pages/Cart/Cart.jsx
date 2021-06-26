@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ContextProvider from '../context/ContextProvider';
+import ContextProvider from '../../context/ContextProvider';
 
 export default function Cart() {
 

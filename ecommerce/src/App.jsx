@@ -1,11 +1,11 @@
 import './assets/css/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
-import Welcome from './components/Welcome';
-import ItemDetail from './components/ItemDetail';
-import Cart from './components/Cart';
+import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './pages/Products/ItemListContainer';
+import Welcome from './pages/Home/Welcome';
+import Cart from './pages/Cart/Cart';
 import {ContextProvider} from './context/ContextProvider';
+import ItemDetailContainer from './pages/ProductsDetail/ItemDetailContainer';
 
 export default function App() {
 
@@ -28,7 +28,7 @@ export default function App() {
               </section>
             </Route>
 
-          <Route exact path="/Productos/:id"> <ItemDetail/></Route>
+          <Route exact path="/Productos/:id"> <ItemDetailContainer/></Route>
           <Route exact path="/Cart"> <Cart /></Route>
 
         </Switch>

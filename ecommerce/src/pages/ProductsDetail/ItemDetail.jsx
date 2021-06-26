@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import ItemCount from './ItemCount';
-import imagen from '../assets/images/producto.png'
+import ItemCount from '../../components/Counter/ItemCount';
+import imagen from '../../assets/images/producto.png'
 import { useParams } from 'react-router-dom';
-import Loading from './Loading';
-import {getFirestore} from '../firebase'; 
+import Loading from '../../components/Preloader/Loading';
+import {getFirestore} from '../../firebase'; 
 
 export default function ItemDetail() {
     // Usando styles //
