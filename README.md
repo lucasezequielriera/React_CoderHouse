@@ -10,6 +10,8 @@
 ### 8) Firebase con db firestore vinculado y funcionando
 ### 9) Cart funcionando con opción de eliminar producto
 ### 10) Al pulsar "Comprar" se genera código de compra y se vacía el array que contiene los productos elegidos.
+### 11) Archivos organizados respecto a la documentación de React.
+### 12) Correción de estilos del proyecto.
 
 ![Alt Text](https://github.com/lucasezequielriera/React_CoderHouse/blob/master/gif_react.gif)
 
