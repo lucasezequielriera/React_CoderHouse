@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ContextProvider from '../../context/ContextProvider';
 
 export default function Cart() {
 
 
     const {info, setInfo} = useContext(ContextProvider);
+    const {total, setTotal} = useState(0);
 
     const deleteProducto = (id) => {
         const nuevoArray = info.filter( item => item.id !== id)
@@ -16,6 +17,25 @@ export default function Cart() {
         alert(`Muchas gracias por tu compra! Tu número de compra es: ${numeroDeCompra}`);
         setInfo([]);
     }
+
+    const algo = () => {
+        const numeros = info.map(() => {return info.precio});
+        const total = numeros.reduce((a, b) => a + b, 0);
+        console.log(total)
+        return Number(total);
+    }
+    console.log(algo({total}))
+
+    // useEffect(() => {
+    //     if(info) {
+    //         const numeros = info.map(() => {return info.precio});
+    //         const total = numeros.reduce((a, b) => a + b, 0);
+    //         return total;
+    //     } else {
+    //         console.log("no esxiste nada")
+    //     }
+    //     setTotal(total)
+    // }, [info, setTotal, total])
 
     const boton = <button className="btn btn-success w-100" onClick={compraFinalizada}>Comprar</button>
     
@@ -34,6 +54,7 @@ export default function Cart() {
                         )
                     })
                 }
+            <ul><li>El precio total de los productos es de: ${algo(total)}</li></ul>
             </ul>
             { info.length >= 1 ? boton : "" }
         </div>
