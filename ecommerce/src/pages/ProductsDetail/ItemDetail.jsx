@@ -3,7 +3,7 @@ import ItemCount from '../../components/Counter/ItemCount';
 import imagen from '../../assets/images/producto.png'
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Preloader/Loading';
-import {getFirestore} from '../../firebase'; 
+import firebase from '../../firebase';
 
 export default function ItemDetail() {
     // Usando styles //
@@ -19,7 +19,7 @@ export default function ItemDetail() {
     const [producto, setProducto] = useState([null]);
 
     useEffect(() => {
-        const db = getFirestore();
+        const db = firebase.db;
         const itemsCollection = db.collection("productos");
         itemsCollection.get().then((snapshot) => {
         setProducto(snapshot.docs.map(doc => doc.data()));

@@ -1,14 +1,14 @@
 import {useState, useEffect} from 'react';
 import Item from './Item';
 import Loading from '../../components/Preloader/Loading';
-import {getFirestore} from '../../firebase'; 
+import firebase from '../../firebase';
 export default function ItemList() {
 
     // Usando Firebase //
     const [productos, setProductos] = useState([null]);
 
     useEffect(() => {
-        const db = getFirestore();
+        const db = firebase.db;
         const itemsCollection = db.collection("productos");
         itemsCollection.get().then((snapshot) => {
         setProductos(snapshot.docs.map(doc => doc.data()));
