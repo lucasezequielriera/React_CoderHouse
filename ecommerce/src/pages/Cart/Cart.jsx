@@ -31,15 +31,15 @@ export default function Cart() {
             ciudad: form.ciudad,
             provincia: form.provincia
         })
-        .then((docRef) => {
-            console.log("Document successfully written!", docRef);
+        .then(({id}) => {
+            console.log("Document successfully written!");
+            alert(`Felicitaciones por tu compra!\n\nTu código de compra es: \n${id}`);
             window.location.replace('');
         })
         .catch((error) => {
             console.error("Error writing document: ", error);
         });
         console.log(form)
-        alert(`Felicitaciones por tu compra!\nTu número de compra es:`);
         
     }
 
