@@ -29,10 +29,16 @@ export default function Cart() {
             email: form.email,
             telefono: form.telefono,
             ciudad: form.ciudad,
-            provincia: form.provincia
+            provincia: form.provincia,
+            productosComprados: {
+                productos: info.map((e) => {return e.nombre}),
+                cantidad: info.map((e) => {return e.cantidad}),
+                precio: info.map((e) => {return e.precio})
+            }
         })
         .then(({id}) => {
             console.log("Document successfully written!");
+            console.log(info)
             alert(`Felicitaciones por tu compra!\n\nTu código de compra es: \n${id}`);
             window.location.replace('');
         })
@@ -48,7 +54,7 @@ export default function Cart() {
         const value = event.target.value;
         setForm({...form,[name]:value})
     }
-
+    console.log(info)
     const formulario =
     <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div className="modal-dialog">
