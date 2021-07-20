@@ -29,26 +29,6 @@ export default function ItemDetail() {
     // Declarando constante con los datos del producto elegido por id //
     const detalleProducto = producto[id];
 
-    // // Usando useContext pasando datos globales //
-    // const datos = useContext(CartContext);
-
-    // // Usando async await para mostrar productos después de 2 segundos //
-    // function ver() {
-    //     return new Promise(resolve => {
-    //         setTimeout(() => {
-    //             resolve(datos);
-    //         }, 1000)
-    //     });
-    // }
-    // // Usando Promises y Sync //
-    // async function obtenerProductos() {
-    //     const result = await ver();
-    //     setProducto(result);
-    // };
-
-    // // Inicializando productos por function //
-    // obtenerProductos();
-
     if (producto.length >= 2) {
         return (
             <div className="card text-center">

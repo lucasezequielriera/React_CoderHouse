@@ -14,26 +14,6 @@ export default function ItemList() {
         setProductos(snapshot.docs.map(doc => doc.data()));
         });
     }, []);
-    
-    // // Declarando variables // 
-    // const [productos, setProductos] = useState([]);
-
-    // // Usando async await para mostrar productos después de 2 segundos //
-    // function ver() {
-    //     return new Promise(resolve => {
-    //         setTimeout(() => {
-    //             resolve(datos);
-    //         }, 1000)
-    //     });
-    // }
-
-    // async function obtenerProductos() {
-    //     const result = await ver();
-    //     setProductos(result);
-    // };
-
-    // // Mostrando función siempre //
-    // obtenerProductos()
 
     if (productos.length >= 2) {
         return (
